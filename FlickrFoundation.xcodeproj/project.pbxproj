@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66EBAAA2B3036685B26688CD /* Pods_FlickrFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C73FA2563F7AFDD9079E6D /* Pods_FlickrFoundationTests.framework */; };
 		ACB2CA4022262BB7009EBF05 /* FlickrFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB2CA3622262BB7009EBF05 /* FlickrFoundation.framework */; };
 		ACB2CA4522262BB7009EBF05 /* FlickrFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2CA4422262BB7009EBF05 /* FlickrFoundationTests.swift */; };
 		ACB2CA4722262BB8009EBF05 /* FlickrFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = ACB2CA3922262BB7009EBF05 /* FlickrFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACB2CA532226389B009EBF05 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2CA522226389B009EBF05 /* Constants.swift */; };
 		ACB2CA5522263908009EBF05 /* KeywordSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2CA5422263908009EBF05 /* KeywordSearchManager.swift */; };
+		D0A7D54F76D7499D0E5F9D3D /* Pods_FlickrFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B0396B32E991F0E406599 /* Pods_FlickrFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13E2E6E2FA5A0B115DD64B80 /* Pods-FlickrFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrFoundationTests.release.xcconfig"; path = "Target Support Files/Pods-FlickrFoundationTests/Pods-FlickrFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
+		30C73FA2563F7AFDD9079E6D /* Pods_FlickrFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A30C5FDD47F206DE61326F8 /* Pods-FlickrFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrFoundation.release.xcconfig"; path = "Target Support Files/Pods-FlickrFoundation/Pods-FlickrFoundation.release.xcconfig"; sourceTree = "<group>"; };
+		8CEA068C21988EAEF8BDFCF9 /* Pods-FlickrFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrFoundationTests.debug.xcconfig"; path = "Target Support Files/Pods-FlickrFoundationTests/Pods-FlickrFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACB2CA3622262BB7009EBF05 /* FlickrFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlickrFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB2CA3922262BB7009EBF05 /* FlickrFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrFoundation.h; sourceTree = "<group>"; };
 		ACB2CA3A22262BB7009EBF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +41,8 @@
 		ACB2CA522226389B009EBF05 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACB2CA5422263908009EBF05 /* KeywordSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordSearchManager.swift; sourceTree = "<group>"; };
 		ACB2CA8522264171009EBF05 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		B13B0396B32E991F0E406599 /* Pods_FlickrFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7C7E0273A0DDAA9113BB0C3 /* Pods-FlickrFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrFoundation.debug.xcconfig"; path = "Target Support Files/Pods-FlickrFoundation/Pods-FlickrFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A7D54F76D7499D0E5F9D3D /* Pods_FlickrFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB2CA4022262BB7009EBF05 /* FlickrFoundation.framework in Frameworks */,
+				66EBAAA2B3036685B26688CD /* Pods_FlickrFoundationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +74,8 @@
 				ACB2CA3822262BB7009EBF05 /* FlickrFoundation */,
 				ACB2CA4322262BB7009EBF05 /* FlickrFoundationTests */,
 				ACB2CA3722262BB7009EBF05 /* Products */,
+				CEA512ED17398E03766A20DE /* Pods */,
+				C37E8AF341305288895777A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +108,26 @@
 			path = FlickrFoundationTests;
 			sourceTree = "<group>";
 		};
+		C37E8AF341305288895777A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B13B0396B32E991F0E406599 /* Pods_FlickrFoundation.framework */,
+				30C73FA2563F7AFDD9079E6D /* Pods_FlickrFoundationTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEA512ED17398E03766A20DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7C7E0273A0DDAA9113BB0C3 /* Pods-FlickrFoundation.debug.xcconfig */,
+				6A30C5FDD47F206DE61326F8 /* Pods-FlickrFoundation.release.xcconfig */,
+				8CEA068C21988EAEF8BDFCF9 /* Pods-FlickrFoundationTests.debug.xcconfig */,
+				13E2E6E2FA5A0B115DD64B80 /* Pods-FlickrFoundationTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -114,6 +146,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACB2CA4A22262BB8009EBF05 /* Build configuration list for PBXNativeTarget "FlickrFoundation" */;
 			buildPhases = (
+				B8DBF58FCA052CD664825C01 /* [CP] Check Pods Manifest.lock */,
+				AC8F51972226424C0096EE15 /* Run SwiftLint */,
 				ACB2CA3122262BB7009EBF05 /* Headers */,
 				ACB2CA3222262BB7009EBF05 /* Sources */,
 				ACB2CA3322262BB7009EBF05 /* Frameworks */,
@@ -132,6 +166,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACB2CA4D22262BB8009EBF05 /* Build configuration list for PBXNativeTarget "FlickrFoundationTests" */;
 			buildPhases = (
+				7F0183BC88A65AD2ADD9027C /* [CP] Check Pods Manifest.lock */,
 				ACB2CA3B22262BB7009EBF05 /* Sources */,
 				ACB2CA3C22262BB7009EBF05 /* Frameworks */,
 				ACB2CA3D22262BB7009EBF05 /* Resources */,
@@ -199,6 +234,71 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F0183BC88A65AD2ADD9027C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlickrFoundationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC8F51972226424C0096EE15 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		B8DBF58FCA052CD664825C01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlickrFoundation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACB2CA3222262BB7009EBF05 /* Sources */ = {
@@ -353,6 +453,7 @@
 		};
 		ACB2CA4B22262BB8009EBF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7C7E0273A0DDAA9113BB0C3 /* Pods-FlickrFoundation.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -380,6 +481,7 @@
 		};
 		ACB2CA4C22262BB8009EBF05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A30C5FDD47F206DE61326F8 /* Pods-FlickrFoundation.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -406,6 +508,7 @@
 		};
 		ACB2CA4E22262BB8009EBF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CEA068C21988EAEF8BDFCF9 /* Pods-FlickrFoundationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -425,6 +528,7 @@
 		};
 		ACB2CA4F22262BB8009EBF05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13E2E6E2FA5A0B115DD64B80 /* Pods-FlickrFoundationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

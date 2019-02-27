@@ -10,6 +10,8 @@
 		ACB2CA4022262BB7009EBF05 /* FlickrFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB2CA3622262BB7009EBF05 /* FlickrFoundation.framework */; };
 		ACB2CA4522262BB7009EBF05 /* FlickrFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2CA4422262BB7009EBF05 /* FlickrFoundationTests.swift */; };
 		ACB2CA4722262BB8009EBF05 /* FlickrFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = ACB2CA3922262BB7009EBF05 /* FlickrFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACB2CA532226389B009EBF05 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2CA522226389B009EBF05 /* Constants.swift */; };
+		ACB2CA5522263908009EBF05 /* KeywordSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2CA5422263908009EBF05 /* KeywordSearchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,8 @@
 		ACB2CA4422262BB7009EBF05 /* FlickrFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFoundationTests.swift; sourceTree = "<group>"; };
 		ACB2CA4622262BB8009EBF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB2CA5022262C71009EBF05 /* FlickrFoundation.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlickrFoundation.podspec; sourceTree = "<group>"; };
+		ACB2CA522226389B009EBF05 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ACB2CA5422263908009EBF05 /* KeywordSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordSearchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		ACB2CA3822262BB7009EBF05 /* FlickrFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2CA522226389B009EBF05 /* Constants.swift */,
+				ACB2CA5422263908009EBF05 /* KeywordSearchManager.swift */,
 				ACB2CA3922262BB7009EBF05 /* FlickrFoundation.h */,
 				ACB2CA3A22262BB7009EBF05 /* Info.plist */,
 			);
@@ -150,6 +156,7 @@
 				TargetAttributes = {
 					ACB2CA3522262BB7009EBF05 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					ACB2CA3E22262BB7009EBF05 = {
 						CreatedOnToolsVersion = 10.1;
@@ -196,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB2CA532226389B009EBF05 /* Constants.swift in Sources */,
+				ACB2CA5522263908009EBF05 /* KeywordSearchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +352,7 @@
 		ACB2CA4B22262BB8009EBF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -360,6 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.haoxinli.FlickrFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -368,6 +379,7 @@
 		ACB2CA4C22262BB8009EBF05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -393,6 +405,7 @@
 		ACB2CA4E22262BB8009EBF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5RFZ63C7NL;
 				INFOPLIST_FILE = FlickrFoundationTests/Info.plist;
@@ -411,6 +424,7 @@
 		ACB2CA4F22262BB8009EBF05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5RFZ63C7NL;
 				INFOPLIST_FILE = FlickrFoundationTests/Info.plist;

@@ -34,6 +34,7 @@
 		ACB2CA5022262C71009EBF05 /* FlickrFoundation.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlickrFoundation.podspec; sourceTree = "<group>"; };
 		ACB2CA522226389B009EBF05 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACB2CA5422263908009EBF05 /* KeywordSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordSearchManager.swift; sourceTree = "<group>"; };
+		ACB2CA8522264171009EBF05 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		ACB2CA2C22262BB7009EBF05 = {
 			isa = PBXGroup;
 			children = (
+				ACB2CA8522264171009EBF05 /* Podfile */,
 				ACB2CA5022262C71009EBF05 /* FlickrFoundation.podspec */,
 				ACB2CA3822262BB7009EBF05 /* FlickrFoundation */,
 				ACB2CA4322262BB7009EBF05 /* FlickrFoundationTests */,

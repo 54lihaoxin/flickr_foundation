@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "FlickrFoundation"
   s.version      = "0.0.1"
-  s.summary      = "A short description of FlickrFoundation."
+  s.summary      = "Flickr API related business logic"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,9 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
+                   This is a framework of Flickr API related business logic
                    DESC
 
-  s.homepage     = "http://EXAMPLE/FlickrFoundation"
+  s.homepage     = "https://haoxin.li"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -38,8 +39,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "BSD", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -53,9 +53,6 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "Haoxin Li" => "54lihaoxin@gmail.com" }
-  # Or just: s.author    = "Haoxin Li"
-  # s.authors            = { "Haoxin Li" => "54lihaoxin@gmail.com" }
-  # s.social_media_url   = "http://twitter.com/Haoxin Li"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -63,14 +60,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
-
-  #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = "11.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -79,7 +69,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/FlickrFoundation.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/54lihaoxin/FlickrFoundation.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,8 +80,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "FlickrFoundation", "FlickrFoundation/**/*.{h,m}"
+  s.exclude_files = "FlickrFoundationTests"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -128,6 +118,8 @@ Pod::Spec.new do |s|
   #  If your library depends on compiler flags you can set them in the xcconfig hash
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
+
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 
   # s.requires_arc = true
 

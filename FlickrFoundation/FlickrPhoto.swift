@@ -8,13 +8,14 @@
 
 import Foundation
 
-struct FlickrPhoto {
-    let identifier: String
+public struct FlickrPhoto {
+    public let identifier: String
+    public let title: String
+
     let owner: String
     let secret: String
     let server: String
     let farm: Int
-    let title: String
 }
 
 extension FlickrPhoto: Decodable {

@@ -10,7 +10,7 @@ import XCTest
 @testable import FlickrFoundation
 
 final class APIPhotosSearchTests: XCTestCase {
-    private let networkTimeout: TimeInterval = 5
+    private let networkTimeout: TimeInterval = 3
 
     func testHotRequest() {
         let expectation = self.expectation(description: "search for photos")

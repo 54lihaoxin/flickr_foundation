@@ -11,6 +11,7 @@ import Foundation
 struct APIPhotosSearch {
     struct Request {
         let searchTerm: String
+        let pageInfo: PageInfo
     }
 
     struct Response {
@@ -21,7 +22,7 @@ struct APIPhotosSearch {
     }
 
     static func performSearch(request: Request, completion: @escaping (ServiceResult<Response>) -> Void) {
-        let urlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(APIConstant.flickrAPIKey)&text=\(request.searchTerm.percentEncodedUrlQueryString)&per_page=\(APIConstant.resultsPerPage)&format=json&nojsoncallback=1" // TODO: need URL builder
+        let urlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(APIConstant.flickrAPIKey)&text=\(request.searchTerm.percentEncodedUrlQueryString)&page=\(request.pageInfo.pageNumber)&per_page=\(request.pageInfo.resultsPerPage)&format=json&nojsoncallback=1" // TODO: need URL builder
 
         guard let url = URL(string: urlString) else {
             completion(.failure(error: .invalidURL(urlString: urlString)))

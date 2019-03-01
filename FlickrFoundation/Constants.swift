@@ -8,6 +8,7 @@
 
 import Foundation
 
-enum APIKeys {
+enum APIConstant {
     static let flickrAPIKey = "1508443e49213ff84d566777dc211f2a"
+    static let resultsPerPage = 25
 }

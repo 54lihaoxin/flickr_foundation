@@ -25,10 +25,8 @@ struct APIPhotosSearch {
     }
 
     static func performSearch(request: Request, completion: @escaping (ServiceResult<Response>) -> Void) {
-        let urlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(APIConstant.flickrAPIKey)&text=\(request.searchTerm.percentEncodedUrlQueryString)&page=\(request.pageInfo.pageNumber)&per_page=\(request.pageInfo.resultsPerPage)&format=json&nojsoncallback=1" // TODO: need URL builder
-
-        guard let url = URL(string: urlString) else {
-            completion(.failure(error: .invalidURL(urlString: urlString)))
+        guard let url = FlickrUrlBuilder.urlForQuery(request.flickrUrlQuery) else {
+            completion(.failure(error: .invalidURL))
             return
         }
 
@@ -50,6 +48,15 @@ struct APIPhotosSearch {
 
             completion(.success(result: decodedResponse))
         }.resume()
+    }
+}
+
+private extension APIPhotosSearch.Request {
+    var flickrUrlQuery: FlickrUrlQuery {
+        return FlickrUrlQuery(method: .photosSearch,
+                              pageInfo: pageInfo,
+                              expectJsonResponse: true,
+                              parameters: ["text": searchTerm])
     }
 }
 

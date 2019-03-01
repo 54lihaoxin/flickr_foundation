@@ -9,7 +9,7 @@
 import Foundation
 
 enum ServiceError: Error {
-    case invalidURL(urlString: String)
+    case invalidURL
     case noData
     case decodeFailure
     case unexpectedError(error: Error)

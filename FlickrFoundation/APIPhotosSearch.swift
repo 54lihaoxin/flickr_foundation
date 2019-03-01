@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ See API documentation: https://www.flickr.com/services/api/explore/flickr.photos.search
+ */
 struct APIPhotosSearch {
     struct Request {
         let searchTerm: String

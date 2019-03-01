@@ -14,8 +14,7 @@ struct APIPhotosSearch {
     }
 
     struct Response {
-        let pageNumber: Int
-        let resultsPerPage: Int
+        let pageInfo: PageInfo
         let totalPageCount: Int
         let totalResultCount: String // Flickr API doesn't use Int for some reason
         let photos: [FlickrPhoto]
@@ -63,9 +62,10 @@ extension APIPhotosSearch.Response: Decodable {
     init(from decoder: Decoder) throws {
         let rootContainer = try decoder.container(keyedBy: CodingKeys.self)
         let container = try rootContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .photosRoot)
-        pageNumber = try container.decode(Int.self, forKey: .pageNumber)
+        let pageNumber = try container.decode(Int.self, forKey: .pageNumber)
+        let resultsPerPage = try container.decode(Int.self, forKey: .resultsPerPage)
+        pageInfo = PageInfo(pageNumber: pageNumber, resultsPerPage: resultsPerPage)
         totalPageCount = try container.decode(Int.self, forKey: .totalPageCount)
-        resultsPerPage = try container.decode(Int.self, forKey: .resultsPerPage)
         totalResultCount = try container.decode(String.self, forKey: .totalResultCount)
         photos = try container.decode([FlickrPhoto].self, forKey: .photoArray)
     }

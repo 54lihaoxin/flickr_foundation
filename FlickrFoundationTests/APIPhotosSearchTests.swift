@@ -14,7 +14,8 @@ final class APIPhotosSearchTests: XCTestCase {
 
     func testHotRequest() {
         let expectation = self.expectation(description: "search for photos")
-        APIPhotosSearch.searchWithString("red apple") { result in
+        let request = APIPhotosSearch.Request(searchTerm: "red apple")
+        APIPhotosSearch.performSearch(request: request) { result in
             switch result {
             case let .success(result):
                 print("\(#function) result.photos.count: \(result.photos.count)")

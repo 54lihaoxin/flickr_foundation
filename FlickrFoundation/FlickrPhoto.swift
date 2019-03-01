@@ -9,13 +9,26 @@
 import Foundation
 
 public struct FlickrPhoto {
-    public let identifier: String
     public let title: String
 
+    let identifier: String
     let owner: String
     let secret: String
     let server: String
     let farm: Int
+}
+
+public extension FlickrPhoto {
+    /**
+     See documentation here: https://www.flickr.com/services/api/misc.urls.html
+     */
+    public var sourceURL: URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "farm\(farm).staticflickr.com"
+        components.path = "/\(server)/\(identifier)_\(secret).jpg"
+        return components.url
+    }
 }
 
 extension FlickrPhoto: Decodable {

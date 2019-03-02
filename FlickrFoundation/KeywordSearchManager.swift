@@ -10,7 +10,7 @@ import Foundation
 
 public final class KeywordSearchManager {
     public enum SearchResult {
-        case success(photos: [FlickrPhoto], totalPageCount: Int)
+        case success(searchTerm: String, pageNumber: Int, photos: [FlickrPhoto], totalPageCount: Int)
         case failure(errorMessage: String)
     }
 
@@ -24,6 +24,11 @@ public final class KeywordSearchManager {
 
 public extension KeywordSearchManager {
     func searchPhotos(searchTerm: String, pageNumber: Int, completion: @escaping (SearchResult) -> Void) {
+        guard pageNumber > 0 else {
+            completion(.failure(errorMessage: "Page number should start from 1"))
+            return
+        }
+
         self.searchTerm = searchTerm
         self.pageNumber = pageNumber
 
@@ -39,7 +44,10 @@ public extension KeywordSearchManager {
 
             switch result {
             case let .success(result):
-                completion(.success(photos: result.photos, totalPageCount: result.totalPageCount))
+                completion(.success(searchTerm: searchTerm,
+                                    pageNumber: pageNumber,
+                                    photos: result.photos,
+                                    totalPageCount: result.totalPageCount))
             case let .failure(error):
                 completion(.failure(errorMessage: error.localizedDescription))
             }

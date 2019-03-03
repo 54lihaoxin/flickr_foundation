@@ -8,38 +8,61 @@
 
 import Foundation
 
-public struct FlickrPhoto: Decodable {
+public struct FlickrPhoto {
     public let title: String
-    public let url: URL
 
+    let identifier: String
+    let owner: String
+    let secret: String
+    let server: String
+    let farm: Int
+}
+
+public extension FlickrPhoto {
+    var url: URL? {
+        return url(withQualitySpecifier: .unspecified)
+    }
+
+    func thumbnailURL(forScreenScale scale: CGFloat) -> URL? {
+        let qualitySpecifier: QualitySpecifier
+        if scale >= 3 {
+            qualitySpecifier = .longestSide320
+        } else if scale >= 2 {
+            qualitySpecifier = .longestSide240
+        } else { // scale == 1
+            qualitySpecifier = .square150x150
+        }
+        return url(withQualitySpecifier: qualitySpecifier)
+    }
+}
+
+private extension FlickrPhoto {
+    enum QualitySpecifier: String {
+        case unspecified = "" // no specifier
+        case longestSide320 = "_n" // n: 320 on longest side
+        case longestSide240 = "_m" // m: 240 on longest side
+        case square150x150 = "_q" // q: square 150x150
+    }
+
+    /**
+     See documentation here: https://www.flickr.com/services/api/misc.urls.html
+     */
+    func url(withQualitySpecifier qualitySpecifier: QualitySpecifier) -> URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "farm\(farm).staticflickr.com"
+        components.path = "/\(server)/\(identifier)_\(secret)\(qualitySpecifier.rawValue).jpg"
+        return components.url
+    }
+}
+
+extension FlickrPhoto: Decodable {
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
+        case owner
         case secret
         case server
         case farm
         case title
-    }
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        title = try container.decode(String.self, forKey: .title)
-
-        let farm = try container.decode(Int.self, forKey: .farm)
-        let server = try container.decode(String.self, forKey: .server)
-        let identifier = try container.decode(String.self, forKey: .identifier)
-        let secret = try container.decode(String.self, forKey: .secret)
-
-        // See documentation here: https://www.flickr.com/services/api/misc.urls.html
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "farm\(farm).staticflickr.com"
-        components.path = "/\(server)/\(identifier)_\(secret).jpg"
-
-        guard let url = components.url else {
-            let errorMessage = "Unable to construct a valid URL for the photo"
-            throw DecodingError.valueNotFound(URL.self, DecodingError.Context(codingPath: [], debugDescription: errorMessage))
-        }
-
-        self.url = url
     }
 }

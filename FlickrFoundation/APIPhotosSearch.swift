@@ -78,6 +78,6 @@ extension APIPhotosSearch.Response: Decodable {
         pageInfo = PageInfo(pageNumber: pageNumber, resultsPerPage: resultsPerPage)
         totalPageCount = try container.decode(Int.self, forKey: .totalPageCount)
         totalResultCount = try container.decode(String.self, forKey: .totalResultCount)
-        photos = try container.decode([FlickrPhoto].self, forKey: .photoArray)
+        photos = container.safelyDecodeArray(of: FlickrPhoto.self, forKey: .photoArray)
     }
 }

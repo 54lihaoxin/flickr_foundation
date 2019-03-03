@@ -58,14 +58,12 @@ public extension KeywordSearchManager {
 
             switch result {
             case let .success(result):
+                if self.photos.isEmpty { // set `totalResultCount` in the first fetch, and do not update later
+                    self.totalResultCount = Int(result.totalResultCount) ?? result.photos.count
+                }
                 self.photos.append(contentsOf: result.photos)
                 self.lastFetchedPageNumber = pageNumber
                 self.totalPageCount = result.totalPageCount
-                if self.lastFetchedPageNumber == result.totalPageCount {
-                    self.totalResultCount = self.photos.count
-                } else {
-                    self.totalResultCount = Int(result.totalResultCount) ?? result.photos.count
-                }
                 completion(.success)
             case let .failure(error):
                 completion(.failure(errorMessage: error.localizedDescription))

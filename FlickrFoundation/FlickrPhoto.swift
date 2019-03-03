@@ -27,7 +27,7 @@ public struct FlickrPhoto: Decodable {
         let farm = try container.decode(Int.self, forKey: .farm)
         let server = try container.decode(String.self, forKey: .server)
         let identifier = try container.decode(String.self, forKey: .identifier)
-        let secret = try container.decode(String.self, forKey: .server)
+        let secret = try container.decode(String.self, forKey: .secret)
 
         // See documentation here: https://www.flickr.com/services/api/misc.urls.html
         var components = URLComponents()

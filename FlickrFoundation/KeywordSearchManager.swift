@@ -21,8 +21,8 @@ public final class KeywordSearchManager {
     public let searchTerm: String
     public private(set) var totalResultCount = 0 // number of all results could be returned from backend API
     public private(set) var photos = [FlickrPhoto]()
+    public private(set) var isFetchInProgress = false
 
-    private var isFetchInProgress = false
     private var lastFetchedPageNumber = 0 // the first page is 1, not 0, so use 0 to represent "not fetched"
     private var totalPageCount = 0
 

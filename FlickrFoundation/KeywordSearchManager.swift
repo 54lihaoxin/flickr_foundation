@@ -8,46 +8,65 @@
 
 import Foundation
 
+/**
+ Each `KeywordSearchManager` is only good for one search term, and a new `KeywordSearchManager` is needed for new
+ search term. Page status is managed internally, while pages are fetched consecutively upon request.
+ */
 public final class KeywordSearchManager {
     public enum SearchResult {
-        case success(searchTerm: String, pageNumber: Int, photos: [FlickrPhoto], totalPageCount: Int)
+        case success
         case failure(errorMessage: String)
     }
 
-    public static let shared = KeywordSearchManager()
+    public let searchTerm: String
+    public private(set) var totalResultCount = 0 // number of all results could be returned from backend API
+    public private(set) var photos = [FlickrPhoto]()
 
-    private(set) var searchTerm = ""
-    private(set) var pageNumber = 1 // the first page is 1, not 0
+    private var isFetchInProgress = false
+    private var lastFetchedPageNumber = 0 // the first page is 1, not 0, so use 0 to represent "not fetched"
+    private var totalPageCount = 0
+
+    public init(searchTerm: String) {
+        self.searchTerm = searchTerm
+    }
 }
 
 // MARK: - API
 
 public extension KeywordSearchManager {
-    func searchPhotos(searchTerm: String, pageNumber: Int, completion: @escaping (SearchResult) -> Void) {
-        guard pageNumber > 0 else {
-            completion(.failure(errorMessage: "Page number should start from 1"))
+    func fetchMorePhotos(completion: @escaping (SearchResult) -> Void) {
+        guard !isFetchInProgress,
+            !searchTerm.isEmpty,
+            self.lastFetchedPageNumber <= totalPageCount else {
             return
         }
 
-        self.searchTerm = searchTerm
-        self.pageNumber = pageNumber
-
+        let pageNumber = lastFetchedPageNumber + 1
         let request = APIPhotosSearch.Request(searchTerm: searchTerm,
                                               pageInfo: PageInfo(pageNumber: pageNumber,
                                                                  resultsPerPage: APIConstant.resultsPerPage))
+
+        isFetchInProgress = true
         APIPhotosSearch.performSearch(request: request) { [weak self] result in
-            guard let self = self,
-                self.searchTerm == searchTerm,
-                self.pageNumber == pageNumber else {
+            guard let self = self else {
                 return // do nothing if the user is searching for something different
+            }
+
+            defer {
+                self.isFetchInProgress = false
             }
 
             switch result {
             case let .success(result):
-                completion(.success(searchTerm: searchTerm,
-                                    pageNumber: pageNumber,
-                                    photos: result.photos,
-                                    totalPageCount: result.totalPageCount))
+                self.photos.append(contentsOf: result.photos)
+                self.lastFetchedPageNumber = pageNumber
+                self.totalPageCount = result.totalPageCount
+                if self.lastFetchedPageNumber == result.totalPageCount {
+                    self.totalResultCount = self.photos.count
+                } else {
+                    self.totalResultCount = Int(result.totalResultCount) ?? result.photos.count
+                }
+                completion(.success)
             case let .failure(error):
                 completion(.failure(errorMessage: error.localizedDescription))
             }

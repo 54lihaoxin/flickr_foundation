@@ -14,13 +14,11 @@ final class KeywordSearchManagerTests: XCTestCase {
 
     func testHotRequest() {
         let expectation = self.expectation(description: "search for photos")
-        let manager = KeywordSearchManager()
-        let searchTerm = "red apple"
-        let pageNumber = 1
-        manager.searchPhotos(searchTerm: searchTerm, pageNumber: pageNumber) { result in
+        let manager = KeywordSearchManager(searchTerm: "red apple")
+        manager.fetchMorePhotos { result in
             switch result {
-            case let .success(_, _, photos, totalPageCount):
-                print("\(#function) result.photos.count: \(photos.count), totalPageCount: \(totalPageCount)")
+            case .success:
+                print("\(#function) manager.photos.count: \(manager.photos.count), manager.totalResultCount: \(manager.totalResultCount)")
             case let .failure(errorMessage):
                 XCTFail(errorMessage)
             }

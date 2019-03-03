@@ -41,6 +41,7 @@
 		6A30C5FDD47F206DE61326F8 /* Pods-FlickrFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrFoundation.release.xcconfig"; path = "Target Support Files/Pods-FlickrFoundation/Pods-FlickrFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		8CEA068C21988EAEF8BDFCF9 /* Pods-FlickrFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrFoundationTests.debug.xcconfig"; path = "Target Support Files/Pods-FlickrFoundationTests/Pods-FlickrFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5C6EFF222B69340095DC14 /* KeyedDecodingContainer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Extensions.swift"; sourceTree = "<group>"; };
+		AC5C6F06222BC62A0095DC14 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AC7677E722292957001D2093 /* APIPhotosSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPhotosSearch.swift; sourceTree = "<group>"; };
 		AC7677E922293122001D2093 /* APIPhotosSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPhotosSearchTests.swift; sourceTree = "<group>"; };
 		AC7677EE22293D1F001D2093 /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
@@ -58,7 +59,7 @@
 		ACB2CA5022262C71009EBF05 /* FlickrFoundation.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlickrFoundation.podspec; sourceTree = "<group>"; };
 		ACB2CA522226389B009EBF05 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACB2CA5422263908009EBF05 /* KeywordSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordSearchManager.swift; sourceTree = "<group>"; };
-		ACB2CA8522264171009EBF05 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		ACB2CA8522264171009EBF05 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B13B0396B32E991F0E406599 /* Pods_FlickrFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C7E0273A0DDAA9113BB0C3 /* Pods-FlickrFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrFoundation.debug.xcconfig"; path = "Target Support Files/Pods-FlickrFoundation/Pods-FlickrFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +125,7 @@
 		ACB2CA2C22262BB7009EBF05 = {
 			isa = PBXGroup;
 			children = (
+				AC5C6F06222BC62A0095DC14 /* README.md */,
 				ACB2CA8522264171009EBF05 /* Podfile */,
 				ACB2CA5022262C71009EBF05 /* FlickrFoundation.podspec */,
 				ACB2CA3822262BB7009EBF05 /* FlickrFoundation */,
